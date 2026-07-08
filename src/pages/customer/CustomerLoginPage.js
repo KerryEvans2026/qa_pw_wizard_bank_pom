@@ -9,6 +9,7 @@ export class CustomerLoginPage {
 
   async open() {
     await this.page.goto('/angularJs-protractor/BankingProject/#/customer');
+    await this.page.reload();
   }
 
   async waitForOpened() {

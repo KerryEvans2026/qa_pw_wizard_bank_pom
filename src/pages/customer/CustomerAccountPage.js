@@ -77,4 +77,8 @@ export class CustomerAccountPage {
   async assertWithdrawNoBalanceErrorMessageIsVisible() {
     await expect(this.withdrawNoBalanceErrorMessage).toBeVisible();
   }
+  
+  async reload() {
+  await this.page.reload();
+}
 }

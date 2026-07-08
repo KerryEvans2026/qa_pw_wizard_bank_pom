@@ -46,4 +46,8 @@ export class TransactionsPage {
   async assertHeaderThirdCellContainsText(text) {
     await expect(this.headerThirdCell).toContainText(text);
   }
+
+  async clickDateHeader() {
+  await this.headerFirstCell.click();
+}
 }
