@@ -10,11 +10,11 @@ export class CustomerAccountPage {
         hasText: 'Account Number',
       })
       .first();
-    this.depositButton = page.getByRole('button', { name: 'Deposit' });
+    this.depositButton = page.locator('button.tab', { hasText: 'Deposit' });
     this.transactionsButton = page.getByRole('button', {
       name: 'Transactions',
     });
-    this.withdrawlButton = page.getByRole('button', { name: 'Withdraw' });
+    this.withdrawlButton = page.locator('button.tab', { hasText: 'Withdrawl' });
     this.amountInputField = page.getByPlaceholder('amount');
     this.depositFormButton = page.getByRole('form').getByRole('button', {
       name: 'Deposit',
@@ -77,8 +77,8 @@ export class CustomerAccountPage {
   async assertWithdrawNoBalanceErrorMessageIsVisible() {
     await expect(this.withdrawNoBalanceErrorMessage).toBeVisible();
   }
-  
+
   async reload() {
-  await this.page.reload();
-}
+    await this.page.reload();
+  }
 }

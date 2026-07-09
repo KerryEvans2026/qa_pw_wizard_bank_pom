@@ -22,7 +22,7 @@ test.beforeEach(async ({ page }) => {
   await addCustomerPage.clickAddCustomerButton();
 });
 
-test('Assert manager can add new customer', async ({ page }) => {
+test('Assert manager can open account for customer', async ({ page }) => {
   const bankManagerMainPage = new BankManagerMainPage(page);
   const openAccountPage = new OpenAccountPage(page);
   const customersListPage = new CustomersListPage(page);

@@ -15,6 +15,7 @@ export class TransactionsPage {
   async open() {
     await this.page.goto('/angularJs-protractor/BankingProject/#/listTx');
   }
+
   async reload() {
     await this.page.reload();
   }
@@ -48,6 +49,12 @@ export class TransactionsPage {
   }
 
   async clickDateHeader() {
-  await this.headerFirstCell.click();
-}
+    await this.page.locator("a[ng-click*='sortType']").click({ force: true });
+    await this.page.waitForTimeout(500);
+  }
+
+  async assertTransactionExists(amount, type) {
+    const row = this.page.getByRole('row').filter({ hasText: amount }).filter({ hasText: type });
+    await expect(row).toBeVisible();
+  }
 }
